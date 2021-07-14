@@ -9,14 +9,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ApplicationCore.Entities
 {
     [Table("Genre")]
-   public class Genre
+    public class Genre
     {
-        
+
         public int Id { get; set; }
 
         [MaxLength(24)]
-        
+
         public string Name { get; set; }
+
+        public ICollection<MovieGenre> MovieGenres { get;set;}
     }
 
     // To change entity/table 2 options, DataAnnotations, Fluent API
